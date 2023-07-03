@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - chat.remisco.com
+    - chat.your-domain
     secretName: rocket-chat--tls
   rules:
-    - host: chat.remisco.com
+    - host: chat.your-domain
       http:
         paths:
           - path: /*
