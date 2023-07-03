@@ -36,3 +36,14 @@ sudo certbot certonly --manual --manual-auth-hook /etc/letsencrypt/acme-dns-auth
 You use the --manual argument to disable all of the automated integration features of Certbot. In this case you’re just issuing a raw certificate, rather than automatically installing it on a service as well.
 You configure Certbot to use the acme-dns-certbot hook via the --manual-auth-hook argument. You run the --preferred-challenges argument so that Certbot will give preference to DNS validation.
 You must also tell Certbot to pause before attempting to validate the certificate, which you do with the --debug-challenges argument. This is to allow you to set the DNS CNAME record(s) required by acme-dns-certbot. Without the --debug-challenges argument, Certbot wouldn’t pause, so you wouldn’t have time to make the required DNS change.
+
+### Step 4 - Convert pem file to base64 encoded 
+To use retrived pem file in secret's manifest and then in ingress-rule's manifest you need to encode them in base64 and type them in one line.
+Publickey and full chain:
+```
+base64  /etc/letsencrypt/live/your-domain/fullchain.pem | tr -d '\n\r'
+```
+privatekey:
+```
+base64  /etc/letsencrypt/live/your-domain/privkey.pem | tr -d '\n\r'
+```
