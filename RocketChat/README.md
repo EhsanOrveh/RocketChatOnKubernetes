@@ -3,7 +3,7 @@
 ```
 helm repo add rocketchat https://rocketchat.github.io/helm-charts
 ```
-2. installing rocket chat with value. Check the value file in RocketChat Folder.
+2. installing rocket chat with value.
 ```
 helm install myrocketchat -f Values.yaml rocketchat/rocketchat
 ```
