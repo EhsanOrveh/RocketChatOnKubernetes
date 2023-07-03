@@ -1,1 +1,13 @@
-
+enableAuth: true
+enableGuests: true
+publicURL: "jitsi.your-domain"
+  # Depending on the cloud, LB's public IP cannot be known in advance, so deploy first, without the next option.
+  # Next: redeploy with the following option set to the public IP you retrieved from the API.
+  # Additionally, you can add your cluster's public IPs if you want to use direct connection as a fallback.
+jvb:
+  publicIPs:
+     - <The public IP that has been retrived from metallb>
+  service:
+      type: LoadBalancer
+extraCommonEnvs: {
+        AUTH_TYPE: jwt, JWT_APP_ID: my_jitsi_app_id, JWT_APP_SECRET: my_jitsi_app_secret
