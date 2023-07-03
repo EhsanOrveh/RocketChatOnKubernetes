@@ -50,6 +50,6 @@ base64  /etc/letsencrypt/live/your-domain/privkey.pem | tr -d '\n\r'
 ## RocketChat - Jitsi integration
 Official [doc](https://docs.rocket.chat/use-rocket.chat/rocket.chat-conference-call/conference-call-admin-guide/jitsi-app)
 Jitsi app necessarily config base on our deployment:
-![image](https://github.com/EhsanOrveh/RocketChatOnKubernetes/assets/50044017/aee892d1-7d16-4d95-968f-3f596bbe5c6f)
+![image](https://github.com/EhsanOrveh/RocketChatOnKubernetes/assets/50044017/f9acd63e-876b-4b94-897f-ed972704feaf)
 
 
