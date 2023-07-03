@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: "true"
+  name: jitsi-chat-ingress
+  #  namespace: default
+spec:
+  tls:
+  - hosts:
+    - "jitsi.your-domain"
+    secretName: jitsi.your-domain
+  rules:
+    - host: jitsi.your-domain
+      http:
+        paths:
+          - path: /*
+            pathType: Prefix
+            backend:
+              service:
+                name: myjitsi-jitsi-meet-web
+                port:
+                  number: 80
