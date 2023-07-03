@@ -11,3 +11,4 @@ jvb:
       type: LoadBalancer
 extraCommonEnvs: {
         AUTH_TYPE: jwt, JWT_APP_ID: my_jitsi_app_id, JWT_APP_SECRET: my_jitsi_app_secret
+        }
